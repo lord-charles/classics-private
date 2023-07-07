@@ -80,7 +80,6 @@ export default function NestedModal({ open, setOpen, data }) {
           return toast.error(`${res.data.invoice.failed_reason}`);
         case "COMPLETE":
           return (
-            sendCode(),
             runFireworks(),
             toast.success(
               "Transaction completed. Voucher will be sent via SMS within 10min. Thank you."
