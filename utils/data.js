@@ -69,7 +69,7 @@ export const packages2 = [
   },
   {
     speed: "8",
-    price: "20",
+    price: "2",
     devices: "2",
     period: "Unlimited",
     streaming: "1080p",
@@ -79,7 +79,7 @@ export const packages2 = [
   },
   {
     speed: "10",
-    price: "1",
+    price: "3",
     devices: "2",
     period: "5Gb",
     streaming: "2160p",
@@ -89,7 +89,7 @@ export const packages2 = [
   },
   {
     speed: "5",
-    price: "30",
+    price: "4",
     devices: "2",
     period: "Unlimited",
     streaming: "720",
