@@ -148,15 +148,7 @@ const Home = () => {
             Why Lumos Classics fiber?
           </p>
           <div className="flex md:justify-evenly xxs:flex-col md:flex-row lg:flex-row xxs:space-y-6 lg:justify-evenly space-x-6">
-            <ReactPlayer
-              url="/Fiber.mp4"
-              controls
-              width="100%"
-              height="auto"
-              playing={isVideoReady}
-              onReady={handlePlayerReady}
-              AutoPlay
-            />
+          
             <div className="">
               <div
                 className="flex space-x-2  justify-center items-center
