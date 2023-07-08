@@ -39,75 +39,17 @@ const Home = () => {
 
   const getUnits = async () => {
     try {
-      const response1 = await axios.post(`${base_url}vouchers/by-criteria`, {
-        bandwidth: "80Gb",
-        speed: "10",
-        validity: "7days",
-      });
-      setGB80(response1.data.length);
-
-      const response2 = await axios.post(`${base_url}vouchers/by-criteria`, {
-        bandwidth: "70Gb",
-        speed: "5",
-        validity: "30days",
-      });
-      setGB70(response2.data.length);
-
-      const response3 = await axios.post(`${base_url}vouchers/by-criteria`, {
-        bandwidth: "280Gb",
-        speed: "10",
-        validity: "30days",
-      });
-      setGB280(response3.data.length);
-
-      const response4 = await axios.post(`${base_url}vouchers/by-criteria`, {
-        bandwidth: "140Gb",
-        speed: "8",
-        validity: "30days",
-      });
-      setGB140(response4.data.length);
-
-      const response5 = await axios.post(`${base_url}vouchers/by-criteria`, {
-        bandwidth: "50Gb",
-        speed: "5",
-        validity: "12hours",
-      });
-      setU12H(response5.data.length);
-
-      const response6 = await axios.post(`${base_url}vouchers/by-criteria`, {
-        bandwidth: "40Gb",
-        speed: "5",
-        validity: "7days",
-      });
-      setGB40(response6.data.length);
-
-      const response7 = await axios.post(`${base_url}vouchers/by-criteria`, {
-        bandwidth: "60Gb",
-        speed: "8",
-        validity: "7days",
-      });
-      setGB60(response7.data.length);
-
-      const response8 = await axios.post(`${base_url}vouchers/by-criteria`, {
-        bandwidth: "50Gb",
-        speed: "8",
-        validity: "3hours",
-      });
-      setU3H(response8.data.length);
-
-      const response9 = await axios.post(`${base_url}vouchers/by-criteria`, {
-        bandwidth: "50Gb",
-        speed: "8",
-        validity: "hour",
-      });
-      setU1H(response9.data.length);
-
-      const response10 = await axios.post(`${base_url}vouchers/by-criteria`, {
-        bandwidth: "5Gb",
-        speed: "10",
-        validity: "24hours",
-      });
-      setGB5(response10.data.length);
+      const res = await axios.get(`${base_url}vouchers/get/count`);
+      setGB70(res.data[1].count);
+      setGB80(res.data[0].count);
+      setGB280(res.data[2].count);
+      setGB140(res.data[3].count);
+      setGB40(res.data[5].count);
+      setGB60(res.data[6].count);
+      setGB5(res.data[9].count);
+      setU1H(res.data[8].count);
+      setU3H(res.data[7].count);
+      setU12H(res.data[4].count);
     } catch (err) {
       console.log(err);
     }
